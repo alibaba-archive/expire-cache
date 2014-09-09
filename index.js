@@ -68,7 +68,6 @@
         value = getValue(expireCache, key, value);
         if (value) result[key] = value;
       });
-      console.log(result);
       return result;
     };
 

@@ -2,7 +2,7 @@
   "name": "expire-cache",
   "description": "A simple cache that supports expiring and namespace.",
   "main": "index.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/teambition/expire-cache",
   "authors": [
     "Yan Qing <admin@zensh.com>"
