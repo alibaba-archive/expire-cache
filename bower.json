@@ -16,10 +16,7 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "docs",
-    "benchmark",
     "test",
-    "tests"
+    "examples"
   ]
 }
