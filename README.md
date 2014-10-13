@@ -1,4 +1,4 @@
-expire-cache v0.1.1 [![Build Status](https://travis-ci.org/teambition/expire-cache.svg)](https://travis-ci.org/teambition/expire-cache)
+expire-cache v0.2.0 [![Build Status](https://travis-ci.org/teambition/expire-cache.svg)](https://travis-ci.org/teambition/expire-cache)
 ====
 A simple cache that supports expiring and namespace.
 

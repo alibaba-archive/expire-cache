@@ -146,6 +146,12 @@ describe('expireCache', function() {
   it('expireCache.set(key, value, expire)', function(done) {
     expireCache.set('expire', value, 1);
     Should(expireCache.get('expire')).be.equal(value);
+    var ex = dataCache[':expire'].e;
+    expireCache.set('expire', 123, 0.5);
+    Should(dataCache[':expire'].e).not.be.equal(ex);
+    ex = dataCache[':expire'].e;
+    expireCache.set('expire', value, false);
+    Should(dataCache[':expire'].e).be.equal(ex);
     setTimeout(function() {
       Should(expireCache.get('expire')).be.equal(void 0);
       return done();
@@ -207,4 +213,3 @@ describe('expireCache', function() {
   });
 
 });
-

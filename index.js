@@ -79,14 +79,16 @@
       } else {
         object[key] = value;
       }
-      expire = expire >= 0 ? expire : expireCache._ex;
 
-      expire = +expire * 1000 + (+new Date());
+      var _expire = expire >= 0 ? expire : expireCache._ex;
+      _expire = +_expire * 1000 + (+new Date());
+
       forEach(object, function(value, key) {
         key = expireCache._ns + key;
         dataCache[key] = dataCache[key] || {};
         dataCache[key].d = value;
-        dataCache[key].e = expire;
+        // expire 为 `false` 时，将不会更新过期时间
+        if (expire !== false || !dataCache[key].e) dataCache[key].e = _expire;
       });
       return expireCache;
     };
@@ -116,7 +118,7 @@
   var expireCache = expireCacheFactory();
 
   expireCache.NAME = 'expireCache';
-  expireCache.VERSION = 'v0.1.0';
+  expireCache.VERSION = 'v0.2.0';
 
   expireCache._getCache = function () {
     return {
