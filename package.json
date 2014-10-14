@@ -2,7 +2,7 @@
   "name": "expire-cache",
   "description": "A simple cache that supports expiring and namespace.",
   "main": "index.js",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/teambition/expire-cache",
   "authors": [
     "Yan Qing <admin@zensh.com>"
@@ -18,13 +18,15 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.5.6",
-    "gulp-jshint": "^1.8.4",
-    "gulp-mocha": "^1.0.0",
-    "run-sequence": "^0.3.6",
-    "should": "^4.0.4"
+    "should": "^8.3.0",
+    "standard": "^6.0.8",
+    "tman": "^0.6.0"
   },
   "scripts": {
-    "test": "gulp test"
-  }
+    "test": "standard && tman"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ]
 }
